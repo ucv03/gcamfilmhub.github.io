@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Gcam Film Hub</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #e8f0fe;
+      padding: 2rem;
+      color: black;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+
+    header {
+      background-color: #4285f4;
+      color: white;
+      padding: 1.5rem;
+      text-align: center;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #f1f3f4;
+      border-bottom: 1px solid #ddd;
+    }
+
+    nav a {
+      flex: 1;
+      text-align: center;
+      padding: 1rem;
+      text-decoration: none;
+      color: #333;
+      transition: background 0.3s, color 0.3s;
+      cursor: pointer;
+    }
+
+    nav a:hover,
+    nav a.active {
+      background-color: #e0e7ff;
+      color: #1a73e8;
+      font-weight: bold;
+    }
+
+    section {
+      display: none;
+      padding: 2rem;
+      animation: fade 0.4s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    ul {
+      margin-top: 1rem;
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .subsection {
+      margin-top: 1rem;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    .subsection h3, .subsection h4 {
+      margin-bottom: 0.5rem;
+      color: black;
+    }
+
+    .underline {
+      text-decoration: underline;
+    }
+
+    a.link {
+      color: #1a73e8;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a.link:hover {
+      color: #0d47a1;
+    }
+
+    @keyframes fade {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Gcam Film Hub</h1>
+    </header>
+
+    <nav>
+      <a class="active" onclick="showSection('versions', this)">APKs & Config</a>
+      <a onclick="showSection('luts', this)">LUTs</a>
+    </nav>
+
+    <section id="versions" class="active">
+      <h2 class="underline">APKs & Config</h2>
+
+      <div class="subsection">
+        <h3 class="underline">APKs</h3>
+
+        <div class="subsection">
+          <h4>LMC</h4>
+          <p>
+            <a class="link" href="https://www.celsoazevedo.com/files/android/google-camera/dev-hasli/f/dl18/" target="_blank">Tải về LMC tại đây</a>
+          </p>
+        </div>
+
+        <div class="subsection">
+          <h4>AGC</h4>
+          <ul>
+            <li><a class="link" href="https://www.celsoazevedo.com/files/android/google-camera/dev-BigKaka/f/dl82/" target="_blank">AGC 8.4</a></li>
+            <li><a class="link" href="https://www.celsoazevedo.com/files/android/google-camera/dev-BigKaka/f/dl80/" target="_blank">AGC 9.2</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3 class="underline">Config</h3>
+
+        <div class="subsection">
+          <h4>Fuji</h4>
+          <ul>
+            <li><a class="link" href="https://drive.google.com/uc?export=download&id=13jmfhmk_8HWSu3oq3QPoSv9wW0j2rP1k" target="_blank">Fuji Config</a></li>
+          </ul>
+        </div>
+
+        <div class="subsection">
+          <h4>Cine</h4>
+          <ul>
+            <li><a class="link" href="https://drive.google.com/uc?export=download&id=13udNFSjLlLwnLHZUhYieNuVEw5zxjQAf" target="_blank">Cine Config</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="luts">
+      <h2>LUTs</h2>
+      <ul>
+        <li><a class="link" href="https://drive.google.com/uc?export=download&id=12v_b9b9fZJ98307_e2OO83T4G8JFLChO" target="_blank">Fuji LUTs</a></li>
+        <li><a class="link" href="https://drive.google.com/uc?export=download&id=12oUnaU6J2wxQM29zrwSPAhYrJB_Ccjyd" target="_blank">Cine LUTs</a></li>
+      </ul>
+    </section>
+  </div>
+
+  <script>
+    function showSection(id, element) {
+      document.querySelectorAll("section").forEach(section => {
+        section.classList.remove("active");
+      });
+      document.getElementById(id).classList.add("active");
+
+      document.querySelectorAll("nav a").forEach(link => {
+        link.classList.remove("active");
+      });
+      element.classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
